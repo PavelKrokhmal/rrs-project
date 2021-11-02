@@ -1,17 +1,15 @@
 import React, {useEffect} from 'react'
-import api from 'modules/api/api'
 import {JOBS} from 'modules/api/endpoints'
-import {useSelector} from 'react-redux'
+import useFetch from 'hooks/useFetch'
 
 export default function Jobs() {
-  useEffect(async () => {
-    const response = await api.fetch(JOBS)
-  }, [])
+  const {response, performFetch} = useFetch(JOBS)
 
+  useEffect(() => {
+    performFetch()
+  }, [performFetch])
 
-  const jobs = useSelector(store => store.api.jobs)
-
-  console.log(jobs)
+  console.log(response)
 
   return (
     <div>
