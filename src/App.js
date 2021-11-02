@@ -1,7 +1,11 @@
+import Jobs from 'components/Jobs'
+import Employees from 'components/Employees'
+
 function App() {
   return (
     <div>
-      App
+      <Jobs/>
+      <Employees/>
     </div>
   )
 }
