@@ -2,9 +2,11 @@ import {createStore, applyMiddleware, combineReducers, compose} from 'redux'
 import apiReducer from 'modules/api/reducer'
 import createSagaMiddleware from 'redux-saga'
 import apiSaga from 'modules/api/saga'
+import appReducer from './modules/app/reducer'
 
 const reducers = combineReducers({
-  api: apiReducer
+  api: apiReducer,
+  app: appReducer
 })
 
 const sagaMiddleware = createSagaMiddleware()
